@@ -1,11 +1,9 @@
 # Sudoku-solver
 
 ## Introduction
-
 This is a basic brute force sudoku solver
 
 ## Options
-
 The program accepts 3 options:
 
 d : to display the sudoku in a readable way, if not set returns it will output the grid solved with only numbers and      
@@ -14,25 +12,23 @@ i : to give a raw input<br />
 f : to give a file
 
 ## Usage
+#### Default file
 
-### Default file
+Use the content of grid.txt
 
-Modify the content of grid.txt
-
-### Special file
+#### Special file
 
 Use the option -f and the path to the file:
 
 ./sudoku -f path/to/file
 
-### Raw input
+#### Raw input
 
 Give an input string to the program:
 
 ./sudoku -i someInput
 
-### Examples
-
+## Examples
 #### Input file with easy reabable content
 
 ./sudoku -fd path/to/file
