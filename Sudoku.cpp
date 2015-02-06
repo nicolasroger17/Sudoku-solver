@@ -3,7 +3,8 @@
 
 #include <iostream>
 #include <fstream>
-#include <string>	
+#include <string>
+#include <cstdlib>
 #include "Solver.h"
 
 using namespace std;
@@ -12,7 +13,19 @@ void fileReader(int ** grid, const char * path);
 void inputReader(int ** grid, char * input);
 
 int main(int argc, char *argv[]){
-	bool output = true;
+	bool output = false;
+	char inputType = '\0';
+
+	if (argc > 1){
+		string param = static_cast<string>(argv[1]);
+		if (param.find('d') != string::npos)
+			output = true;
+
+		if (param.find('f') != string::npos && argc > 2)
+			inputType = 'f';
+		else if (param.find('i') != string::npos && argc > 2)
+			inputType = 'i';
+	}
 
 	int **grid = new int*[9]; // dynamic array (size 10) of pointers to int
 
@@ -20,19 +33,16 @@ int main(int argc, char *argv[]){
 		grid[i] = new int[9];
 	}
 
-	if (argc == 2){
-		inputReader(grid, argv[1]);
-	}
-	else if (argc == 3){
-		if (static_cast<string>(argv[1]) == "-f"){
+	switch (inputType){
+		case 'f':
 			fileReader(grid, argv[2]);
-			output = false;
-		}
-		else
-			exit(2);
-	}
-	else{
-		fileReader(grid, "grid.txt\0");
+			break;
+		case 'i':
+			inputReader(grid, argv[2]);
+			break;
+		default:
+			fileReader(grid, "grid.txt\0");
+			break;
 	}
 
 	Solver * s = new Solver(grid);
