@@ -4,25 +4,6 @@
 using namespace std;
 
 /**
-* constructor
-* take a 9x9 array by value
-**/
-Solver::Solver(int newGrid[9][9]){
-	grid = new int*[9]; // dynamic array (size 10) of pointers to int
-
-	for (int i = 0; i < 9; ++i) {
-		grid[i] = new int[9];
-		// each i-th pointer is now pointing to dynamic array (size 10) of actual int values
-	}
-
-	for (int i = 0; i < 9; ++i) {   // for each row
-		for (int j = 0; j < 9; ++j) { // for each column
-			grid[i][j] = newGrid[i][j];
-		}
-	}
-}
-
-/**
 * destructor
 **/
 Solver::~Solver(){
@@ -136,7 +117,10 @@ void Solver::display() {
 				cout << "|";
 
 			}
-			cout << grid[i][j];
+			if (grid[i][j] > 0)
+				cout << grid[i][j];
+			else
+				cout << " ";
 
 		}
 
@@ -147,5 +131,14 @@ void Solver::display() {
 			cout << "+---+---+---+" << endl;
 
 		}
+	}
+}
+
+void Solver::rawDisplay(){
+	for (int i = 0; i != 9; i++) {
+		for (int j = 0; j != 9; j++)
+			cout << grid[i][j];
+
+		cout << endl;
 	}
 }

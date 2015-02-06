@@ -8,7 +8,7 @@ class Solver{
 	int **grid;
 
 public:
-	Solver(int newGrid[9][9]);
+	Solver(int ** newGrid) :grid(newGrid){}
 	~Solver();
 
 	Position * next(Position * p);
@@ -18,7 +18,8 @@ public:
 	bool isInsertableInSquare(Position * p, int number);
 	bool solve(Position * p);
 	bool solve();
-	void Solver::display();
+	void display();
+	void rawDisplay();
 };
 
 #endif

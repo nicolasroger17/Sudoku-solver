@@ -6,8 +6,21 @@ This is a basic brute force sudoku solver
 
 ## Usage
 
-You just have to modify the input array in Sudoku.cpp
+### Default file
 
-## Todo
+Modify the content of grid.txt
 
-Read from a file
+### Special file
+
+Use the option -f and the path to the file:
+
+./sudoku -f path/to/my/file
+
+### Command-line
+
+Give an input string to the program:
+
+./sudoku < someString
+
+This way, it will output the grid solved with only numbers and carriage return.
+So you can give the solution as an input to another program.
