@@ -8,9 +8,9 @@ This is a basic brute force sudoku solver
 
 The program accepts 3 options:
 
-d : to display the sudoku in a readable way,
-	if not set returns it will output the grid solved with only numbers and carriage return.
-i : to give a raw input
+d : to display the sudoku in a readable way, if not set returns it will output the grid solved with only numbers and      
+      carriage returns.<br />
+i : to give a raw input<br />
 f : to give a file
 
 ## Usage
@@ -39,4 +39,4 @@ Give an input string to the program:
 
 #### Raw input redirected to a file
 
-./sudoku -i 1xx4xx37x2xx6xxxx9xxxx8xxxxx4xx9xx3xx21xxx58xx6xx5xx1xxxxx4xxxx6xxxx7xx5x39xx6xx8 > output.txt
+./sudoku -i 1xx4xx37x2xx6xxxx9xxxx8xxxxx4xx9xx3xx21xxx58xx6xx5xx1xxxxx4xxxx6xxxx7xx5x39xx6xx8 > output
