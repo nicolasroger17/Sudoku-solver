@@ -10,9 +10,7 @@ The program accepts 3 options:
 
 d : to display the sudoku in a readable way,
 	if not set returns it will output the grid solved with only numbers and carriage return.
-	
 i : to give a raw input
-
 f : to give a file
 
 ## Usage
